@@ -1,0 +1,15 @@
+{
+  "name": "myweb",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "huangqiong",
+  "license": "ISC",
+  "dependencies": {
+    "angular": "^1.4.0",
+    "bootstrap": "^3.3.4"
+  }
+}
