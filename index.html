@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="mainApp">
+<head>
+	<meta charset="UTF-8">
+	<title>my web</title>
+	<link rel="stylesheet" type="text/css" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/app.css">
+</head>
+<body>
+	<header class="header" ng-include="'views/includes/header.html'"></header>
+	<section class="tent_nav">
+		
+	</section>
+	<section class="main" ng-view="">
+	</section>
+	<footer class="row"></footer>
+
+	
+</body>
+<!-- jquery -->
+<script type="text/javascript" src="node_modules/jquery/dist/jquery.min.js"></script>
+<script type="text/javascript" src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+
+<!-- angular -->
+<script type="text/javascript" src="node_modules/angular/angular.min.js"></script>
+<script type="text/javascript" src="node_modules/angular-resource/angular-resource.min.js"></script>
+<script type="text/javascript" src="node_modules/angular-route/angular-route.min.js"></script>
+
+<script type="text/javascript" src="js/app.js"></script>
+<script type="text/javascript" src="js/controllers.js"></script>
+</html>

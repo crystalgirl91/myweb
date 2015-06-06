@@ -1,0 +1,20 @@
+*{margin: 0px;padding: 0px;}
+ul,ol{list-style: none;}
+a{text-decoration: none;}
+a:active,a:focus{outline: none}
+body{
+	font-family: Arial, Lucida, Verdana, 宋体, Helvetica, sans-serif;
+	font-size: 62.5%;
+	background: #ffffff url(../img/paper.gif) repeat;
+}
+.navbar-iradius{
+	border-radius: none!important;
+	background: linear-gradient(45deg,#020031,#6d3353 100%);
+	-webkit-box-shadow: 0px 1px 3px #aaa;
+	box-shadow: 0px 1px 3px #aaa;
+}
+/*.tent_nav{
+	background: -webkit-linear-gradient(45deg,#020031,#6d3353 100%);
+	background: -o-linear-gradient(45deg,#020031,#6d3353 100%);
+	background: linear-gradient(45deg,#020031,#6d3353 100%);
+}*/
