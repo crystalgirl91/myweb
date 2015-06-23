@@ -15,7 +15,11 @@
     "bootstrap": "^3.3.4",
     "jquery": "^2.1.4"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-ruby-sass": "^1.0.5",
+    "sass": "^0.5.0"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/crystalgirl91/myweb.git"
