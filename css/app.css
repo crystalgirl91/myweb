@@ -13,6 +13,10 @@ body{
 	-webkit-box-shadow: 0px 1px 3px #aaa;
 	box-shadow: 0px 1px 3px #aaa;
 }
+.tent_nav{
+	padding-top: 200px;
+	text-align: center;
+}
 /*.tent_nav{
 	background: -webkit-linear-gradient(45deg,#020031,#6d3353 100%);
 	background: -o-linear-gradient(45deg,#020031,#6d3353 100%);

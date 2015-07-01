@@ -1,4 +1,4 @@
-angular.module('mainApp', ["ngRoute","ngResource","ng.controller"])
+angular.module('mainApp', ["ngRoute","ngResource","ng.controller","ui.bootstrap","ng.directive"])
 .config(["$routeProvider",function($routeProvider){
 	$routeProvider
 	.when("/home", {
