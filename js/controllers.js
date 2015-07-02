@@ -13,4 +13,7 @@ angular.module('ng.controller', [])
 }])
 .controller("mainController",["$scope",function($scope){
 	$scope.ip="10.1.41.0";
+	$scope.$watch("ip",function(newval){
+		console.log("watch##################",newval)
+	})
 }])
