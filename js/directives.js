@@ -14,23 +14,30 @@ angular.module("ng.directive", [])
 			ngModelCtrl.$render = function(){
 				console.log("render##################",ngModelCtrl)
 				var modelVal = ngModelCtrl.$modelValue;
-				modelVal.split(".").forEach(function(i,idx){
-					scope["seg" + (idx + 1)] = i;
-				});
-				setValidate();
+				if(modelVal){
+					modelVal.split(".").forEach(function(i,idx){
+						if(i){
+							scope["seg" + (idx + 1)] = i;
+						}
+					});
+					setValidate();
+				}
 			}
 			function setValidate(){
 				var reg = /^(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])$/ ;
 				var isValid = reg.test(ngModelCtrl.$modelValue);
-				console.log("valid##################",isValid)
+				console.log("valid##################",isValid,ngModelCtrl)
 				ngModelCtrl.$setValidity("ip",isValid);
 			}
 
 			// ui -- model
 			$input.on("input",function(e){
-				var val = scope.seg1 + "." +scope.seg2 + "."+scope.seg3 + "."+scope.seg4;
-				ngModelCtrl.$setViewValue(val);
-				ngModelCtrl.$render();
+				scope.$apply(function(){
+					var val = scope.seg1 + "." +scope.seg2 + "."+scope.seg3 + "."+scope.seg4;
+					
+					ngModelCtrl.$setViewValue(val);
+					ngModelCtrl.$render();
+				})
 			});
 		}
 	}
