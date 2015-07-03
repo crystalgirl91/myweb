@@ -19,3 +19,6 @@ angular.module('mainApp', ["ngRoute","ngResource","ng.controller","ui.bootstrap"
 	})
 	.otherwise({ redirectTo: "/home" })
 }])
+.run([function(){
+	
+}])
