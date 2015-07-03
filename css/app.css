@@ -44,3 +44,14 @@ body{
 	line-height: 22px;
 	padding: 0px 5px;
 }
+.search input{
+	  border: 0px;
+	  background-color: rgba(245,245,245,0.3);
+	  /*border-top: 1px solid rgba(255,255,255,0.3);
+	  border-bottom: 1px solid rgba(221,221,221,0.3);*/
+	  border-radius: 30px;
+	  -webkit-transition:all .4s 0s;
+}
+.search input:focus{
+	background-color: rgba(245,245,245,0.9);
+}
