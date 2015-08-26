@@ -7,47 +7,55 @@
 	<link rel="stylesheet" type="text/css" href="css/app.css">
 </head>
 <body>
-	<form class="form-horizontal" name="loginForm" id="login">
-	  <div class="form-group has-success has-feedback">
-	    <label class="control-label col-sm-3" for="inputSuccess3">用户名</label>
-	    <div class="col-sm-9">
-	      <input type="text" class="form-control" id="inputSuccess3" aria-describedby="inputSuccess3Status"name="username">
-	      <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
-	      <span id="inputSuccess3Status" class="sr-only"></span>
-	    </div>
-	  </div>
-	  <div class="form-group has-success has-feedback">
-	    <label class="control-label col-sm-3" for="inputGroupSuccess2">密码</label>
-	    <div class="col-sm-9">
-	      <input type="password" class="form-control" id="inputGroupSuccess2" aria-describedby="inputGroupSuccess2Status" name="password">
-	      <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
-	      <span id="inputGroupSuccess2Status" class="sr-only">(success)</span>
-	    </div>
-	  </div>
-	  <button type="submit" class="btn btn-default">提交</button>
-	</form>
+	<div class="login-panel">
+		<form class="form-horizontal" name="loginForm" id="login">
+		  <div class="form-group has-success has-feedback">
+		    <label class="control-label col-sm-3" for="inputSuccess3">用户名</label>
+		    <div class="col-sm-9">
+		      <input type="text" class="form-control" id="inputSuccess3" aria-describedby="inputSuccess3Status"name="username">
+		      <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
+		      <span id="inputSuccess3Status" class="sr-only"></span>
+		    </div>
+		  </div>
+		  <div class="form-group has-success has-feedback">
+		    <label class="control-label col-sm-3" for="inputGroupSuccess2">密码</label>
+		    <div class="col-sm-9">
+		      <input type="password" class="form-control" id="inputGroupSuccess2" aria-describedby="inputGroupSuccess2Status" name="password">
+		      <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
+		      <span id="inputGroupSuccess2Status" class="sr-only">(success)</span>
+		    </div>
+		  </div>
+		  <button type="submit" class="btn btn-default">登  录</button>
+		</form>
+	</div>
 	
 </body>
 <script type="text/javascript" src="node_modules/jquery/dist/jquery.min.js"></script>
 <script type="text/javascript" src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 <script type="text/javascript">
-	 $(function(){
-	 	var form = $("#login");
-	 	form.on("submit",function(e){
-	 		e.preventDefault();
-	 		$.ajax({
-	 			url:"./index.html",
-	 			type:"POST",
-	 			data:{
-	 				password:"1111",
-	 				username:"222"
-	 			},
-	 			dataType:"text",
-	 			// contentType:false
-	 		},function(res){
-	 			console.log(res);
-	 		})
-	 	})
-	 })
-</script>
+ var form = document.forms[0];
+ form.username.value="huagnqoing";
+ form.password.value = "huangqiong";
+ form.onsubmit = function(e){
+ 	e.preventDefault();
+ 	e.stopPropagation();
+ 	 if(form.username.value && form.password.value){
+ 	 	var  postData = {
+ 	 		name : form.username.value,
+ 	 		pass : form.password.value,
+ 	 	};
+	 	login(postData);
+	 }
+ };
+ function login(val){
+ 	var xhr = new XMLHttpRequest();
+ 	xhr.open("post" , "http://127.0.0.1:1337/login");
+ 	xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+ 	xhr.onload = function(){
+ 		if(xhr.status === 200){
+ 			location.replace("index.html");
+ 		}
+ 	};
+ 	xhr.send(JSON.stringify(val));
+ }
 </html>

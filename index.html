@@ -4,12 +4,11 @@
 	<meta charset="UTF-8">
 	<title>my web</title>
 	<link rel="stylesheet" type="text/css" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="css/app.css">
+	<link rel="stylesheet" type="text/css" href="public/css/app.css">
 </head>
-<body>
+<body ng-controller="mainController">
 	<header class="header" ng-include="'views/includes/header.html'"></header>
-	<section class="tent_nav" ng-controller="mainController">
-		<input ng-model="ip" type="text" ip-input></input>
+	<section class="tent_nav" >
 	<section class="main" ng-view="">
 	</section>
 	<footer class="row">
@@ -18,16 +17,16 @@
 	
 </body>
 <!-- jquery -->
-<script type="text/javascript" src="node_modules/jquery/dist/jquery.min.js"></script>
-<script type="text/javascript" src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="node_modules/jquery/dist/jquery.js"></script>
+<script type="text/javascript" src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
 
 <!-- angular -->
-<script type="text/javascript" src="node_modules/angular/angular.min.js"></script> 
-<script type="text/javascript" src="node_modules/angular-resource/angular-resource.min.js"></script>
-<script type="text/javascript" src="node_modules/angular-route/angular-route.min.js"></script>
-<script type="text/javascript" src="node_modules/angular-bootstrap/dist/ui-bootstrap-tpls.min.js"></script>
+<script type="text/javascript" src="node_modules/angular/angular.js"></script> 
+<script type="text/javascript" src="node_modules/angular-resource/angular-resource.js"></script>
+<script type="text/javascript" src="node_modules/angular-route/angular-route.js"></script>
+<script type="text/javascript" src="node_modules/angular-bootstrap/dist/ui-bootstrap.js"></script>
 
-<script type="text/javascript" src="js/app.js"></script>
-<script type="text/javascript" src="js/controllers.js"></script>
-<script type="text/javascript" src="js/directives.js"></script>
+<script type="text/javascript" src="public/js/app.js"></script>
+<script type="text/javascript" src="public/js/controllers.js"></script>
+<script type="text/javascript" src="public/js/directives.js"></script>
 </html>
