@@ -9,19 +9,13 @@
   "author": "huangqiong",
   "license": "ISC",
   "dependencies": {
-    "angular": "^1.4.0",
-    "angular-bootstrap": "^0.12.0",
-    "angular-resource": "^1.3.16",
-    "angular-route": "^1.3.16",
-    "bootstrap": "^3.3.4",
-    "jquery": "^2.1.4"
+    "multer": "^1.0.3"
   },
   "devDependencies": {
     "body-parser": "^1.13.3",
     "express": "^4.13.3",
     "gulp": "^3.9.0",
-    "gulp-ruby-sass": "^1.0.5",
-    "sass": "^0.5.0"
+    "gulp-ruby-sass": "^1.0.5"
   },
   "repository": {
     "type": "git",
@@ -30,5 +24,8 @@
   "bugs": {
     "url": "https://github.com/crystalgirl91/myweb/issues"
   },
-  "homepage": "https://github.com/crystalgirl91/myweb"
+  "homepage": "https://github.com/crystalgirl91/myweb",
+  "bin": {
+    "myweb": "router.js"
+  }
 }

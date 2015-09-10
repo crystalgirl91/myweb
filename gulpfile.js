@@ -1,14 +1,7 @@
-var gulp = require('gulp');
-var sass = require('gulp-ruby-sass');
- 
-gulp.task('sass', function () {
-    return sass('css/') 
-    .on('error', function (err) {
-      console.error('Error!', err.message);
-   })
-    .pipe(gulp.dest('result/css/'));
-});
-gulp.task('watch',function(){
-	gulp.watch('css/*.scss', ['sass'])
+var gulp = require("gulp");
+var jshint = require("gulp-jshint");
+gulp.task("script", function(){
+	return gulp.src("public/js/*.js")
+		.pipe(jshint())
 })
-gulp.task("default",["sass","watch"])
+gulp.task("default",["script"]);
