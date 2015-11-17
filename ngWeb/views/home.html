@@ -1,0 +1,12 @@
+<div data-walter-fall class="panelWall">	
+	<section data-walter-fall-item class="p-panel" ng-repeat="row in rows track by $index">
+		<div class="p-wrapper">
+			<div class="img-wrap"><img ng-src="{{row.url}}" alter=""></div>
+			<h4 class="title">{{row.title}}</h4>
+			<article class="des">{{row.describe}}</article>
+		</div>
+	</section>
+	<form name="uploadFileForm" action="">
+		<upload:file upload-file-config="config"></upload:file>
+	</form>
+</div>

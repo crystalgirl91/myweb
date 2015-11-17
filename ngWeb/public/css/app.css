@@ -1,0 +1,125 @@
+*{margin: 0px;padding: 0px;}
+ul,ol{list-style: none;}
+a{text-decoration: none;}
+a:active,a:focus{outline: none}
+body{
+	font-family: Arial, Lucida, Verdana, 宋体, Helvetica, sans-serif;
+	font-size: 62.5%;
+	background: #ffffff url(../img/paper.gif) repeat;
+}
+.clearfix:after{
+	content: "";
+	display: block;
+	clear: both;
+}
+.navbar-iradius{
+	border-radius: none!important;
+	background: linear-gradient(45deg,#020031,#6d3353 100%);
+	-webkit-box-shadow: 0px 1px 3px #aaa;
+	box-shadow: 0px 1px 3px #aaa;
+}
+.tent_nav{
+	padding-top: 51px;
+}
+.block_nav{
+	background-color: #fff;
+	width: 70%;
+	margin: 0 auto;
+	border-radius: 3px;
+	padding-top: 50px;
+	box-shadow: 0px 0px 5px 1px #ddd; 
+
+}
+.nav-class{
+	float: left;
+	border-left: 1px solid #eee;
+	border-bottom: 1px solid #eee;
+	margin-left: -1px;
+	width: 50%;
+	box-sizing:border-box;
+	padding: 10px;
+}
+.nav-class dd{
+	float: left;
+	margin-right: 5px;
+	border-radius: 3px;
+	background-color: #ddd;
+	line-height: 22px;
+	padding: 0px 5px;
+}
+.search input{
+	  border: 0px;
+	  background-color: rgba(245,245,245,0.3);
+	  /*border-top: 1px solid rgba(255,255,255,0.3);
+	  border-bottom: 1px solid rgba(221,221,221,0.3);*/
+	  border-radius: 30px;
+	  -webkit-transition:all .4s 0s;
+}
+.search input:focus{
+	background-color: rgba(245,245,245,0.9);
+}
+
+
+/*uiTree style*/
+.uiTree{
+	width: 220px;
+	background-color: #fff;
+}
+.uiTree li.parent{
+	line-height: 22px;
+	font-size: 14px;
+	color: #aaa;
+}
+.uiTree li.parent > ul{
+	display: none;
+	-webkit-transition:transform .5s linear;
+	padding-left: 20px;
+}
+.uiTree li.parent.on > ul{
+	display: block;
+}
+.uiTree li.parent:before{
+	content: "﹢";
+	font-size: 14px;
+}
+.uiTree li.parent.on:before{
+	content: "﹣";
+}
+
+
+/*panelWall style*/
+.panelWall{
+	margin: 0 auto;
+	-webkit-transform:translate(10px,0px)
+}
+.panelWall:after{
+	content: "";
+	clear: both;
+	display: block;
+}
+.panelWall .p-panel{
+	width: 220px;
+	padding-right: 10px;
+	float: left;
+}
+.panelWall .p-panel .p-wrapper{
+	background-color: #fff;
+	border-radius: 3px;
+	box-shadow: 0px 0px 5px #ddd;
+	color: #000;
+	padding: 8px;
+	border:1px solid #ddd;
+}
+.panelWall .p-panel .img-wraper{
+	min-height: 60px;
+	background-color: #aaa;
+}
+.music_li{
+	background-color: #fff;
+	font-size: 16px;
+	line-height: 1.5;
+}
+.music_li:hover{
+	color: #aaa;
+	cursor: pointer;
+}
