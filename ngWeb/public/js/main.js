@@ -1,4 +1,4 @@
-angular.module('mainApp', ["ngRoute","ngResource","ng.controller","ui.bootstrap","ng.directive","ng.resource"])
+angular.module('mainApp', ["ngRoute","ngResource","ng.controller","ui.bootstrap","ng.directive","ng.resource","tech.audio"])
 .config(["$routeProvider",function($routeProvider){
 
 	$routeProvider
@@ -26,7 +26,7 @@ angular.module('mainApp', ["ngRoute","ngResource","ng.controller","ui.bootstrap"
 		templateUrl: "views/technology/audio_stream.html",
 		controller: "TechnologyAudioCtrl"
 	})
-	.otherwise({ redirectTo: "/home" })
+	.otherwise({ redirectTo: "/technology/audio" })
 }])
 .config(["$httpProvider",function($httpProvider){
 	$httpProvider.interceptors.push(function($q){

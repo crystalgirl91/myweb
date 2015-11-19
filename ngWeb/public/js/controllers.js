@@ -18,23 +18,20 @@ angular.module('ng.controller', [])
 	
 	
 }])
-.controller("DocumentCtrl", ["$scope", function($scope){
-
+.controller("DocumentCtrl", ["$scope", "MusicVisualizer",function($scope,MusicVisualizer){
 
 }])
 
-.controller('TechnologyUploadCtrl', ['$scope', function($scope) {
-	console.log(222)
+.controller('TechnologyUploadCtrl', ['$scope', "MusicVisualizer",function($scope,MusicVisualizer) {
+
 }])
-.controller('TechnologyAudioCtrl', ['$scope','API', function($scope,API){
+.controller('TechnologyAudioCtrl', ['$scope','API',"MusicVisualizer", function($scope,API,MusicVisualizer){
 	API.technology.get(function(res){
 		$scope.filenames = res.result;
+		$scope.palyAudio("1.mp3");
 	});
 
-	$scope.palyAudio = function(id){
-		console.log("click",id);
-		API.technology.file({id: id},function(res){
-			console.log(33333333,res)
-		});
+	$scope.palyAudio = function(name){
+		MusicVisualizer.play("http://localhost:3031/public/audio/" + name);
 	};
 }])
