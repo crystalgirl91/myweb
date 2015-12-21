@@ -1,5 +1,5 @@
-angular.module('mainApp', ["ngRoute","ngResource","ng.controller","ui.bootstrap","ng.directive","ng.resource","tech.audio"])
-.config(["$routeProvider",function($routeProvider){
+angular.module('mainApp', ["ngRoute","ngResource","ng.controller","ui.bootstrap","ng.directive","ng.resource","tech.audio","ng.e2eTest"])
+.config(["$routeProvider","testProvider",function($routeProvider,testProvider){
 
 	$routeProvider
 	.when("/home", {
@@ -17,7 +17,7 @@ angular.module('mainApp', ["ngRoute","ngResource","ng.controller","ui.bootstrap"
 	.when("/document", {
 		templateUrl: "views/document.html",
 		controller: "DocumentCtrl"
-	})
+	}) 
 	.when("/technology/upload", {
 		templateUrl: "views/technology/upload.html",
 		controller: "TechnologyUploadCtrl"
@@ -26,7 +26,11 @@ angular.module('mainApp', ["ngRoute","ngResource","ng.controller","ui.bootstrap"
 		templateUrl: "views/technology/audio_stream.html",
 		controller: "TechnologyAudioCtrl"
 	})
-	.otherwise({ redirectTo: "/technology/audio" })
+	.when('/manage',{
+		templateUrl: "views/manage.html",
+		controller: "manageCtrl"
+	})
+	.otherwise({ redirectTo: "/home" })
 }])
 .config(["$httpProvider",function($httpProvider){
 	$httpProvider.interceptors.push(function($q){

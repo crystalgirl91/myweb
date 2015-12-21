@@ -4,16 +4,18 @@ var fs = require("fs");
 var ms = require("ms");
 var app = express();
 var router = express.Router();
+var less = require('less');
 
 var __port = "3031"
 app.use(function(req,res,next){
 	res.set({
-		'Access-Control-Allow-Origin': 'http://localhost:'+ __port,
+		'Access-Control-Allow-Origin':'*',
 		"Access-Control-Allow-Methods": "GET, POST, OPTIONS, DELETE, PUT",
 		"Access-Control-Allow-Credentials":true
 	});
 	next();
 })
+app.use(less);
 app.use(express.static(__dirname + "/ngWeb",{maxAge: 0,lastModified:true}));
 
 // app.all("*",function(req,res,next){
@@ -48,3 +50,4 @@ app.get("/public/audio/list",function(req,res){
 // });
 
 app.listen(__port);
+console.log("listen at port 3031");

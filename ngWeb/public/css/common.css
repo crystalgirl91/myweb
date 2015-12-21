@@ -1,0 +1,31 @@
+.tooltip_parent{
+	position: relative;
+}
+.tooltip{
+	background-color: rgba(0,0,0,0.8);
+	line-height: 22px;
+	font-size: 14px;
+	padding: 0px 10px;
+	position: absolute;
+	right: -10px;
+	top: 50%;
+	-webkit-transform: translate(-100%,-50%);
+	-ms-transform: translate(-100%,-50%);
+	-o-transform: translate(-100%,-50%);
+	transform: translate(-100%,-50%);
+	display: none;
+}
+.tooltip i.spiky{
+	display: inline-block;
+	border-width: 5px;
+	border-style: solid;
+	position: absolute;
+	left: -10px;
+	border-color: transparent  rgba(0,0,0,0.8) transparent transparent;
+	top: 50%;
+	margin-top: -5px;
+
+}
+.form-control:focus + .tooltip{
+	display: block;
+}

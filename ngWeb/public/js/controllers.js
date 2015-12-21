@@ -2,16 +2,23 @@ angular.module('ng.controller', [])
 .controller("mainController",["$scope",function($scope){
 
 }])
-.controller("HomeCtrl", ["$scope", "$http",function($scope,$http){
+.provider('test',function(){
+	this.startTime = 2;
+	this.$get = function(){
+		console.log(11111);
+		return "start" + this.startTime + new Date();
+	};
+})
+.controller("HomeCtrl", ["$scope", "$http","$injector","test",function($scope,$http,$injector,test){
+
 	$http.get("/productions").success(function(res){
 		$scope.rows = res;
 	});
-	$scope.config = {
-		url:"/documents",
-	}
 
 }])
-.controller("BlogCtrl", ["$scope", function($scope){
+.controller("BlogCtrl", ["$scope","$injector",function($scope,$injector){
+
+
 	
 }])
 .controller("ProductCtrl", ["$scope","$http", function($scope,$http){
@@ -20,6 +27,9 @@ angular.module('ng.controller', [])
 }])
 .controller("DocumentCtrl", ["$scope", "MusicVisualizer",function($scope,MusicVisualizer){
 
+}])
+.controller('manageCtrl', ['$scope', function(scope){
+	
 }])
 
 .controller('TechnologyUploadCtrl', ['$scope', "MusicVisualizer",function($scope,MusicVisualizer) {
